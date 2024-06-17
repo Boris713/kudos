@@ -1,0 +1,10 @@
+.kudos-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    padding: 10px;
+    width: 100%; 
+    margin: 0 auto;
+    gap: 2%;
+    z-index: 0;
+}
