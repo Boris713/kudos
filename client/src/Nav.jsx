@@ -1,5 +1,7 @@
 import "./Nav.css";
 const Nav = ({ handleSearch }) => {
+  // function that takes in param
+
   return (
     <div className="nav-bar">
       <div className="search-bar">
@@ -13,6 +15,7 @@ const Nav = ({ handleSearch }) => {
       </div>
       <div className="sort-container">
         <button className="btn">All</button>
+        {/*  */}
         <button className="btn">Recent</button>
         <button className="btn">Celebration</button>
         <button className="btn">Thank You</button>

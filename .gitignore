@@ -1,3 +1,9 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# General ignores
+node_modules/
+*.log
+# Environment files
+.env.local
+client/package.json
+client/package-lock.json
+package.json
+package-lock.json

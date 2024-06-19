@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./Header";
 import Nav from "./Nav";
 import KudosRow from "./KudosRow";
+import AddCard from "./AddCard";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Header title={"Kudos"} />
       <Nav handleSearch={handleSearch} />
       <KudosRow searchTerm={searchTerm} />
+      <AddCard />
     </>
   );
 }

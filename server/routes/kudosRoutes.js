@@ -1,28 +1,26 @@
-const express = require('express')
-const router = express.Router()
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const express = require("express");
+const router = express.Router();
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
-
-router.get('/board', async (req,res) => {
-    try { 
+router.get("/board", async (req, res) => {
+  try {
     const boards = await prisma.board.findMany({
-        select: {
-            id: true,
-            imageUrl: true,
-            title: true,
-            author: true,
-            category: true
-        }
+      select: {
+        id: true,
+        imageUrl: true,
+        title: true,
+        author: true,
+        category: true,
+      },
     });
-    
-    return res.status(200).json(boards);
-}catch (error) {
-    res.status(500).send(error.message);
-}
 
+    return res.status(200).json(boards);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 });
-module.exports = router
+module.exports = router;
 /* for future PR */
 // BOARDS
 // GET /boards/:id: Retrieve a specific board by ID.

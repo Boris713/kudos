@@ -8,7 +8,8 @@ const KudosRow = ({ searchTerm }) => {
 
   const populateCards = async () => {
     try {
-      const resp = await fetch("http://localhost:3000/kudos/board");
+      console.log(import.meta.env.VITE_BOARD_URL);
+      const resp = await fetch(import.meta.env.VITE_BOARD_URL);
       const data = await resp.json();
       setBoardInfo(data);
     } catch (error) {
@@ -18,7 +19,7 @@ const KudosRow = ({ searchTerm }) => {
 
   useEffect(() => {
     populateCards();
-  }, [searchTerm]);
+  }, []);
 
   const cards = boardInfo
     .filter((board) =>
