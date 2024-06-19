@@ -42,7 +42,12 @@
     width: 100%;
 }
 
-.btn {
+.btn-contain {
     display: flex;
     justify-content: center;
+
+}
+
+.btn-contain button {
+    margin: 3px;
 }

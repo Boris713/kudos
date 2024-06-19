@@ -1,16 +1,16 @@
 import "./KudosCard.css";
-const KudosCard = () => {
+const KudosCard = ({ key, img, eventName, author, cardType }) => {
   return (
     <div className="card">
       <div className="img-container">
-        <img src=".." alt="Kudos Poster" />
+        <img src={img} alt="Kudos Poster" />
       </div>
       <div className="txt-container">
-        <h2>Kudos Card</h2>
-        <div className="sub-txt"></div>
-        <p className="rating">Info</p>
+        <h2>{eventName}</h2>
+        <p>{author}</p>
+        <p className="card-type">{cardType}</p>
       </div>
-      <div className="btn">
+      <div className="btn-contain">
         <button>View Board</button>
         <button>Delete Board</button>
       </div>

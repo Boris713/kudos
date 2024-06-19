@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Board {
+  id          Int      @id @default(autoincrement())
+  imageUrl    String
+  title       String
+  author      String
+  category    String
+  releaseDate DateTime
+  userId      Int      // Foreign key to User
+  user        User     @relation(fields: [userId], references: [id]) // Relation field
+  cards       Card[]   // Relation field indicating a one-to-many relationship with Card
+}
+
+model Card {
+  id          Int      @id @default(autoincrement())
+  imageUrl    String
+  message     String
+  author      String
+  likes       Int      @default(0)
+  boardId     Int      // Foreign key to Board
+  board       Board    @relation(fields: [boardId], references: [id]) // Relation field
+  userId      Int      // Foreign key to User
+  user        User     @relation(fields: [userId], references: [id]) // Relation field
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  username    String
+  password    String
+  boards      Board[]  // Relation field indicating a one-to-many relationship with Board
+  cards       Card[]   // Relation field indicating a one-to-many relationship with Card
+}

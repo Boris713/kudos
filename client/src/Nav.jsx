@@ -1,9 +1,15 @@
 import "./Nav.css";
-const Nav = () => {
+const Nav = ({ handleSearch }) => {
   return (
     <div className="nav-bar">
       <div className="search-bar">
-        <input type="search" name="kudos-search" id="kudos-search" />
+        <input
+          type="search"
+          name="kudos-search"
+          id="kudos-search"
+          placeholder="Search..."
+          onChange={(e) => handleSearch(e.target.value)}
+        />
       </div>
       <div className="sort-container">
         <button className="btn">All</button>
