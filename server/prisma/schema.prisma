@@ -15,11 +15,10 @@ datasource db {
 
 model Board {
   id          Int      @id @default(autoincrement())
-  imageUrl    String
   title       String
   author      String
   category    String
-  releaseDate DateTime
+  releaseDate DateTime @default(now())
   userId      Int      // Foreign key to User
   user        User     @relation(fields: [userId], references: [id]) // Relation field
   cards       Card[]   // Relation field indicating a one-to-many relationship with Card
@@ -27,7 +26,6 @@ model Board {
 
 model Card {
   id          Int      @id @default(autoincrement())
-  imageUrl    String
   message     String
   author      String
   likes       Int      @default(0)

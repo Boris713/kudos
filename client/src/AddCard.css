@@ -1,42 +1,42 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.677);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    display: none;
-  }
-   .new-board-form {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    max-width: 400px;
-    width: 100%;
-    z-index: 1001;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.677);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+.new-board-form {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1001;
+}
 
-  .new-board-form h2 {
-    text-align: center;
-  }
-  
-  .new-board-form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .new-board-form input,
+.new-board-form h2 {
+  text-align: center;
+}
+
+.new-board-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.new-board-form input,
 .new-board-form select {
   width: 100%; /* Ensure both input and select have the same width */
   padding: 8px;

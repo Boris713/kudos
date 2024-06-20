@@ -8,10 +8,10 @@ router.get("/board", async (req, res) => {
     const boards = await prisma.board.findMany({
       select: {
         id: true,
-        imageUrl: true,
         title: true,
         author: true,
         category: true,
+        releaseDate: true,
       },
     });
 
@@ -23,7 +23,6 @@ router.get("/board", async (req, res) => {
 module.exports = router;
 /* for future PR */
 // BOARDS
-// GET /boards/:id: Retrieve a specific board by ID.
 // POST /boards: Create a new board.
 // DELETE /boards/:id: Delete a specific board by ID.
 

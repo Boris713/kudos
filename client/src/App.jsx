@@ -7,16 +7,21 @@ import "./App.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortTerm, setSortTerm] = useState("All");
 
   const handleSearch = (term) => {
     setSearchTerm(term.toLowerCase());
   };
 
+  const handleSort = (term) => {
+    setSortTerm(term);
+  };
+
   return (
     <>
       <Header title={"Kudos"} />
-      <Nav handleSearch={handleSearch} />
-      <KudosRow searchTerm={searchTerm} />
+      <Nav handleSearch={handleSearch} handleSort={handleSort} />
+      <KudosRow searchTerm={searchTerm} sortTerm={sortTerm} />
       <AddCard />
     </>
   );

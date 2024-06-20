@@ -1,7 +1,5 @@
 import "./Nav.css";
-const Nav = ({ handleSearch }) => {
-  // function that takes in param
-
+const Nav = ({ handleSearch, handleSort }) => {
   return (
     <div className="nav-bar">
       <div className="search-bar">
@@ -14,12 +12,21 @@ const Nav = ({ handleSearch }) => {
         />
       </div>
       <div className="sort-container">
-        <button className="btn">All</button>
-        {/*  */}
-        <button className="btn">Recent</button>
-        <button className="btn">Celebration</button>
-        <button className="btn">Thank You</button>
-        <button className="btn">Inspiration</button>
+        <button className="btn" onClick={() => handleSort("All")}>
+          All
+        </button>
+        <button className="btn" onClick={() => handleSort("Recent")}>
+          Recent
+        </button>
+        <button className="btn" onClick={() => handleSort("Celebration")}>
+          Celebration
+        </button>
+        <button className="btn" onClick={() => handleSort("Thank You")}>
+          Thank You
+        </button>
+        <button className="btn" onClick={() => handleSort("Inspiration")}>
+          Inspiration
+        </button>
       </div>
       <div>
         <button className="btn">Create New</button>
