@@ -3,7 +3,6 @@ node_modules/
 *.log
 # Environment files
 .env.local
-client/package.json
 client/package-lock.json
-package.json
-package-lock.json
+server/package-lock.json
+server/node_modules/.package-lock.json

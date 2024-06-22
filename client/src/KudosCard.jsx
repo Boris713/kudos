@@ -1,5 +1,15 @@
 import "./KudosCard.css";
-const KudosCard = ({ key, img, eventName, author, cardType }) => {
+import React from "react";
+import { Link } from "react-router-dom";
+const KudosCard = ({
+  key,
+  id,
+  img,
+  eventName,
+  author,
+  cardType,
+  deleteBoard,
+}) => {
   return (
     <div className="card">
       <div className="img-container">
@@ -11,8 +21,8 @@ const KudosCard = ({ key, img, eventName, author, cardType }) => {
         <p className="card-type">{cardType}</p>
       </div>
       <div className="btn-contain">
-        <button>View Board</button>
-        <button>Delete Board</button>
+        <Link to={`/board/${id}`}>View Board</Link>
+        <button onClick={() => deleteBoard(id)}>Delete Board</button>
       </div>
     </div>
   );
