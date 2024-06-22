@@ -19,9 +19,7 @@ model Board {
   author      String
   category    String
   releaseDate DateTime @default(now())
-  userId      Int      // Foreign key to User
-  user        User     @relation(fields: [userId], references: [id]) // Relation field
-  cards       Card[]   // Relation field indicating a one-to-many relationship with Card
+  cards       Card[]   
 }
 
 model Card {
@@ -30,15 +28,5 @@ model Card {
   author      String
   likes       Int      @default(0)
   boardId     Int      // Foreign key to Board
-  board       Board    @relation(fields: [boardId], references: [id]) // Relation field
-  userId      Int      // Foreign key to User
-  user        User     @relation(fields: [userId], references: [id]) // Relation field
-}
-
-model User {
-  id          Int      @id @default(autoincrement())
-  username    String
-  password    String
-  boards      Board[]  // Relation field indicating a one-to-many relationship with Board
-  cards       Card[]   // Relation field indicating a one-to-many relationship with Card
+  board       Board    @relation(fields: [boardId], references: [id], onDelete: Cascade) 
 }

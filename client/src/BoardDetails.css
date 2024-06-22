@@ -1,4 +1,4 @@
-.kudos-row {
+.card-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -7,4 +7,13 @@
   margin: 0 auto;
   gap: 2%;
   z-index: 0;
+}
+
+.btn {
+  margin: 5px;
+}
+
+.new_card {
+  display: flex;
+  justify-content: center;
 }

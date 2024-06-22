@@ -4,3 +4,14 @@
   padding: 2rem;
   background-color: white;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white; /* Light grey background, you can change it as needed */
+  color: white; /* Text color, change as needed */
+  text-align: center;
+  padding: 10px 0; /* Padding for aesthetic spacing */
+}
